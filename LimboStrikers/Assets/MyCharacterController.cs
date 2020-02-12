@@ -17,6 +17,8 @@ public class MyCharacterController : MonoBehaviour
     public float startcooldwondashTimer;
     bool dashrecover;
     public SpriteRenderer playerSprite;
+    public float currentAmount;
+    public float speedcooldown;
 
     // Start is called before the first frame update
     void Start()
@@ -32,22 +34,79 @@ public class MyCharacterController : MonoBehaviour
         move.x = Input.GetAxis("Horizontal");
         move.y = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(move.x, move.y);
-        if(!click)
         rb.velocity = movement * speed;
         dashingfunc();
+    }
+
+    private void Update()
+    {
+        if (currentAmount <= 100)
+        {
+            currentAmount += speedcooldown * Time.deltaTime;
+        }
+        else
+        {
+            currentAmount = 100;
+            speedcooldown = 0;
+        }
     }
 
     void dashingfunc()
     {
         Vector2 movement2 = new Vector2(move.x, move.y);
-     
-            if (click)
+
+        if (dashTimer <= 0)
+        {
+            dash = false;
+            rb.velocity = Vector2.zero;
+            dashTimer = startdashTimer;
+        }
+
+        if (dashready == false)
+        {
+            if (click && dash == false)
             {
-                GameObject ghostie = Instantiate(playerghost, transform.position, transform.rotation);
-                dashTimer -= Time.deltaTime;
-                rb.velocity = movement2 * speed * 2f;
+                dash = true;
+                dashready = true;
             }
-        
+        }
+
+        if (dash == true && dashTimer > 0)
+        {
+            //dashaudiodata.Play(0);
+            GameObject ghostie = Instantiate(playerghost, transform.position, transform.rotation);
+            dashTimer -= Time.deltaTime;
+            rb.velocity = movement2 * speed * 2f;
+        }
+
+        if (currentAmount == 100)
+        {
+            speedcooldown = 0;
+        }
+        else if (currentAmount <= 0)
+        {
+            speedcooldown = 180;
+            dashrecover = true;
+        }
+
+        if (dashcooldownTimer <= 0)
+        {
+            dashready = false;
+            dashcooldownTimer = startcooldwondashTimer;
+
+        }
+        else if (dashready == true && dashcooldownTimer > 0)
+        {
+            if (currentAmount > 99 && !dashrecover)
+                speedcooldown = -200;
+
+            dashcooldownTimer -= Time.deltaTime;
+        }
+
+        if (!dashready)
+        {
+            dashrecover = false;
+        }
 
     }
 }

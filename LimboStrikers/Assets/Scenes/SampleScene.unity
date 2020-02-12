@@ -309,11 +309,13 @@ MonoBehaviour:
   speed: 15
   dash: 0
   dashready: 0
-  dashTimer: 0
-  startdashTimer: 0
-  dashcooldownTimer: 0
-  startcooldwondashTimer: 0
+  dashTimer: 0.5
+  startdashTimer: 0.5
+  dashcooldownTimer: 0.2
+  startcooldwondashTimer: 0.2
   playerSprite: {fileID: 0}
+  currentAmount: 100
+  speedcooldown: -200
 --- !u!4 &1115743915
 Transform:
   m_ObjectHideFlags: 0
