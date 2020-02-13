@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour
     public Collider2D ballCollider;
 
     public Rigidbody2D rb;
+
+    public float pushPower;
     //public float wallBounceForce = 20;
 
     // Start is called before the first frame update
@@ -25,23 +27,11 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
-        /*if (ballCollider.IsTouching(wallCollider))
-        {
-            Debug.Log("touch");
-           // rb.AddForceAtPosition(this.transform.up * 200, wallCollider.transform.position);
-        }*/
-
-
+     
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
-
 
 
 }
+
+
