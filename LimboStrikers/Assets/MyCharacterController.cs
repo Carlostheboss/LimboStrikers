@@ -111,7 +111,7 @@ public class MyCharacterController : MonoBehaviour
             //dashaudiodata.Play(0);
             GameObject ghostie = Instantiate(playerghost, transform.position, transform.rotation);
             dashTimer -= Time.deltaTime;
-            rb.velocity = movement2 * speed * 2f;
+            rb.velocity = movement2 * speed * 3f;
         }
 
         if (currentAmount == 100)

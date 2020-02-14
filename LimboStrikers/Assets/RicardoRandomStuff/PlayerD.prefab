@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5088857307931517261}
   - component: {fileID: 5088857307931517265}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: PlayerD
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,6 +150,8 @@ MonoBehaviour:
   startdashTimer: 0
   dashcooldownTimer: 0
   startcooldwondashTimer: 0
-  playerSprite: {fileID: 5088857307931517267}
+  playerSprite: {fileID: 0}
   currentAmount: 1
   speedcooldown: 1
+  pusherCooldown: 0
+  pusher: {fileID: 0}

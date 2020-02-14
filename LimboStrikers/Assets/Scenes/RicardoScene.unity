@@ -1405,6 +1405,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerD
       objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517260, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player2
+      objectReference: {fileID: 0}
     - target: {fileID: 5088857307931517264, guid: 9df56758507f61a4f882aee01b9fc937,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1469,6 +1474,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517265, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: playerghost
+      value: 
+      objectReference: {fileID: 6935553210630016786, guid: 5dc258d51334f7c42accc0864f2e986b,
+        type: 3}
+    - target: {fileID: 5088857307931517265, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: dashTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517265, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: startdashTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517265, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: dashcooldownTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517265, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: startcooldwondashTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517265, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: playerSprite
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df56758507f61a4f882aee01b9fc937, type: 3}
@@ -7808,7 +7844,7 @@ PrefabInstance:
     - target: {fileID: 7661518883969277258, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -1.007813
       objectReference: {fileID: 0}
     - target: {fileID: 7661518883969277258, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
         type: 3}
@@ -7850,6 +7886,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277258, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.54091
+      objectReference: {fileID: 0}
     - target: {fileID: 7661518883969277256, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
         type: 3}
       propertyPath: m_BodyType
@@ -7859,6 +7900,52 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: playerghost
+      value: 
+      objectReference: {fileID: 6935553210630016786, guid: 39639582e3910f94eab78c1cb49eea97,
+        type: 3}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: startdashTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: dashTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: dashcooldownTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: startcooldwondashTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: playerSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: speedcooldown
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: currentAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661518883969277259, guid: 71de326105a2a834cb7a4c68e9d5f3ff,
+        type: 3}
+      propertyPath: speed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71de326105a2a834cb7a4c68e9d5f3ff, type: 3}

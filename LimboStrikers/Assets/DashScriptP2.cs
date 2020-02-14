@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dashscript : MonoBehaviour
+public class DashScriptP2 : MonoBehaviour
 {
     SpriteRenderer sprite;
     private float timer = 0.2f;
@@ -12,9 +12,9 @@ public class Dashscript : MonoBehaviour
     void Start()
     {
         sprite = gameObject.GetComponent<SpriteRenderer>();
-        Player = GameObject.FindWithTag("Player");
-   
-     
+        Player = GameObject.FindWithTag("Player2");
+
+
         transform.position = Player.transform.position;
         transform.localScale = Player.transform.localScale;
         sprite.sprite = Player.GetComponent<MyCharacterController>().playerSprite.sprite;

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7661518883969277258}
+  - component: {fileID: 7661518883969277259}
   - component: {fileID: 7661518883969277257}
   - component: {fileID: 7661518883969277256}
   - component: {fileID: 7661518883969277271}
-  - component: {fileID: 7661518883969277259}
   m_Layer: 0
   m_Name: PlayerA
   m_TagString: Player
@@ -34,6 +34,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7661518883969277259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7661518883969277270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c7e4e6cf565434381071559499db68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerghost: {fileID: 6935553210630016786, guid: 5dc258d51334f7c42accc0864f2e986b,
+    type: 3}
+  speed: 10
+  dash: 0
+  dashready: 0
+  dashTimer: 5
+  startdashTimer: 0
+  dashcooldownTimer: 0
+  startcooldwondashTimer: 0
+  playerSprite: {fileID: 0}
+  currentAmount: 1
+  speedcooldown: 1
+  pusherCooldown: 0
+  pusher: {fileID: 0}
 --- !u!212 &7661518883969277257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -130,26 +156,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &7661518883969277259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661518883969277270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c7e4e6cf565434381071559499db68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerghost: {fileID: 7661518883969277270}
-  speed: 10
-  dash: 0
-  dashready: 0
-  dashTimer: 5
-  startdashTimer: 0
-  dashcooldownTimer: 0
-  startcooldwondashTimer: 0
-  playerSprite: {fileID: 7661518883969277257}
-  currentAmount: 1
-  speedcooldown: 1
