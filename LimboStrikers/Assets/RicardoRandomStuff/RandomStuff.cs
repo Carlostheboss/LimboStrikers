@@ -40,6 +40,5 @@ public class RandomStuff : MonoBehaviour
 			PUTimer = 10.0f;
 		}
 
-
     }
 }
