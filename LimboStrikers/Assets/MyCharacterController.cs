@@ -20,20 +20,17 @@ public class MyCharacterController : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
-<<<<<<< HEAD
+    float speedtimer = 5.0f;
+
     public float pusherCooldown;
     private float nextPush = 0;
     public GameObject pusher;
     private GameObject InstantiatedPusher;
 
     // Start is called before the first frame update
-    void Start()
-=======
-	float speedtimer = 5.0f;
 
 	// Start is called before the first frame update
 	void Start()
->>>>>>> fcf7018a1f2a33227dbb655655670b48e32e2ddc
     {
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
