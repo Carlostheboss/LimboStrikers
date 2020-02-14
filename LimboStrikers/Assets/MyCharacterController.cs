@@ -20,8 +20,10 @@ public class MyCharacterController : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
-    // Start is called before the first frame update
-    void Start()
+	float speedtimer = 5.0f;
+
+	// Start is called before the first frame update
+	void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
@@ -49,7 +51,23 @@ public class MyCharacterController : MonoBehaviour
             currentAmount = 100;
             speedcooldown = 0;
         }
-    }
+
+
+		if (speed != 10)
+		{
+			speedtimer -= Time.deltaTime;
+
+			if (speedtimer < 0)
+			{
+
+				speed = 10.0f;
+
+				speedtimer = 5.0f;
+			}
+
+
+		}
+	}
 
     void dashingfunc()
     {
