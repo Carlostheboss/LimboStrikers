@@ -6,9 +6,9 @@ public class Ball : MonoBehaviour
 {
     public Collider2D wallCollider;
     public Collider2D ballCollider;
-
     public Rigidbody2D rb;
-    //public float wallBounceForce = 20;
+    public Transform player;
+    private Vector3 zAxis = new Vector3(0, 0, 1);
 
     // Start is called before the first frame update
     void Start()
@@ -25,23 +25,14 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-        /*if (ballCollider.IsTouching(wallCollider))
-        {
-            Debug.Log("touch");
-           // rb.AddForceAtPosition(this.transform.up * 200, wallCollider.transform.position);
-        }*/
-
-
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void FixedUpdate()
     {
-        
+
+        transform.RotateAround(player.position, zAxis, 2);
     }
-
-
-
 
 }
+
+

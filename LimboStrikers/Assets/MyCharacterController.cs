@@ -20,8 +20,17 @@ public class MyCharacterController : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
+    float speedtimer = 5.0f;
+
+    public float pusherCooldown;
+    private float nextPush = 0;
+    public GameObject pusher;
+    private GameObject InstantiatedPusher;
+
     // Start is called before the first frame update
-    void Start()
+
+	// Start is called before the first frame update
+	void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
@@ -40,6 +49,16 @@ public class MyCharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K) && Time.time > nextPush)
+        {
+            nextPush = Time.time + pusherCooldown;
+
+            Instantiate(pusher, transform.position, transform.rotation, this.gameObject.transform);
+
+
+        }
+
+
         if (currentAmount <= 100)
         {
             currentAmount += speedcooldown * Time.deltaTime;
@@ -49,7 +68,23 @@ public class MyCharacterController : MonoBehaviour
             currentAmount = 100;
             speedcooldown = 0;
         }
-    }
+
+
+		if (speed != 10)
+		{
+			speedtimer -= Time.deltaTime;
+
+			if (speedtimer < 0)
+			{
+
+				speed = 10.0f;
+
+				speedtimer = 5.0f;
+			}
+
+
+		}
+	}
 
     void dashingfunc()
     {
@@ -64,7 +99,7 @@ public class MyCharacterController : MonoBehaviour
 
         if (dashready == false)
         {
-            if (click && dash == false)
+            if ((click && dash == false) || (Input.GetKeyDown(KeyCode.J) && dash == false))
             {
                 dash = true;
                 dashready = true;
