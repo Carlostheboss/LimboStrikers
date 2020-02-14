@@ -20,6 +20,11 @@ public class MyCharacterController : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
+    public float pusherCooldown;
+    private float nextPush = 0;
+    public GameObject pusher;
+    private GameObject InstantiatedPusher;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +45,16 @@ public class MyCharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K) && Time.time > nextPush)
+        {
+            nextPush = Time.time + pusherCooldown;
+
+            Instantiate(pusher, transform.position, transform.rotation, this.gameObject.transform);
+
+
+        }
+
+
         if (currentAmount <= 100)
         {
             currentAmount += speedcooldown * Time.deltaTime;
@@ -64,7 +79,7 @@ public class MyCharacterController : MonoBehaviour
 
         if (dashready == false)
         {
-            if (click && dash == false)
+            if ((click && dash == false) || (Input.GetKeyDown(KeyCode.J) && dash == false))
             {
                 dash = true;
                 dashready = true;
