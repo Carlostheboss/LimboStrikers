@@ -32,7 +32,7 @@ public class SpeedPowerUp : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D other)
 	{
 
-		if (other.gameObject.tag == "Player")
+		if (other.gameObject.layer == 10)
 		{
 			GameObject player = other.gameObject;
 			MyCharacterController playerScript = player.GetComponent<MyCharacterController>();
