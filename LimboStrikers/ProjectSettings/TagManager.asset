@@ -17,9 +17,15 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< Updated upstream
   - Ball
   - Divider
   - Player
+=======
+  - IgnorePlayer
+  - Player
+  - Walls
+>>>>>>> Stashed changes
   - 
   - 
   - 
