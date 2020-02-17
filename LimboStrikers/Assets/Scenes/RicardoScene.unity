@@ -270,6 +270,7 @@ MonoBehaviour:
   - {fileID: 1325152815321612354, guid: 951c06ac9c4ae954abc697ad1b83fe29, type: 3}
   - {fileID: 8505150452349696883, guid: 359f4fcb3b694a34f92abcf92dbbdf2b, type: 3}
   - {fileID: 1162474953706215240, guid: d4ddcd74ebf1369488e1f8b7cb8499a0, type: 3}
+  - {fileID: 2297638539282609286, guid: ec07ff4e1e0b0274e91cbc74fcf95db7, type: 3}
   MaxRangeX: 11
   MinRangeX: 1
   MaxRangeY: 10
@@ -9245,6 +9246,7 @@ MonoBehaviour:
   - {fileID: 1325152815321612354, guid: 951c06ac9c4ae954abc697ad1b83fe29, type: 3}
   - {fileID: 8505150452349696883, guid: 359f4fcb3b694a34f92abcf92dbbdf2b, type: 3}
   - {fileID: 1162474953706215240, guid: d4ddcd74ebf1369488e1f8b7cb8499a0, type: 3}
+  - {fileID: 2297638539282609286, guid: ec07ff4e1e0b0274e91cbc74fcf95db7, type: 3}
   MaxRangeX: 0
   MinRangeX: -10
   MaxRangeY: 10

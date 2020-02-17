@@ -26,7 +26,6 @@ public class ScoreingGoal : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Colliding");
 
         if(collision.gameObject.tag == "ball")
         {
