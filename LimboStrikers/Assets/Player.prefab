@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5595856734433503943}
   - component: {fileID: 5595856734433503940}
   - component: {fileID: 5595856734433503941}
+  - component: {fileID: 3414704297052320248}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -57,6 +58,11 @@ MonoBehaviour:
   playerSprite: {fileID: 0}
   currentAmount: 100
   speedcooldown: -200
+  pusherCooldown: 0
+  pusher: {fileID: 0}
+  Puck: {fileID: 0}
+  press: 0
+  timer: 0
 --- !u!50 &5595856734433503940
 Rigidbody2D:
   serializedVersion: 4
@@ -127,3 +133,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3414704297052320248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595856734433503946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0907a162c7df4b448864dead2b75562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingTime: 0.4

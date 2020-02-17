@@ -27,16 +27,37 @@ public class MyCharacterController : MonoBehaviour
     public GameObject pusher;
     private GameObject InstantiatedPusher;
 
-    // Start is called before the first frame update
 
-	// Start is called before the first frame update
-	void Start()
+
+    public Ball Puck;
+    public bool press = false;
+    private Vector3 zAxis = new Vector3(0, 0, 1);
+    public static MyCharacterController instance;
+    private CircleCollider2D cc2d;
+    private Vector3 heading;
+    public bool timer = false;
+    Vector2 perpendicular;
+
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+
+        Puck = Ball.instance;
+        cc2d = GetComponent<CircleCollider2D>();
     }
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         click = Input.GetButtonDown("Fire1");
@@ -49,15 +70,58 @@ public class MyCharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (press)
+        {
+            Debug.Log("JumpDown");
+            transform.RotateAround(this.transform.position, zAxis, 2);
+            Puck.thrust = 0.0f;
+            Puck.transform.parent = this.transform;
+            Puck.rb.simulated = false;
+
+            heading = Puck.transform.position - transform.position;
+            Debug.Log("heading" + heading);
+            heading.Normalize();
+            perpendicular = Vector2.Perpendicular(heading);
+            Debug.Log("perpendicular" + perpendicular);
+
+            Puck.PuckMovement(perpendicular);
+
+            timer = false;
+
+
+            if (Puck.transform.parent == this.transform)
+            {
+                Debug.Log("object is attached");
+            }
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            press = false;
+            timer = true;
+
+        }
+        if (!press)
+        {
+            Debug.Log("JumpUp");
+            transform.RotateAround(this.transform.position, zAxis, 0);
+
+            Puck.thrust = 2.0f;
+            Puck.transform.parent = null;
+            Puck.rb.simulated = true;
+
+            if (Puck.transform.parent != this.transform)
+            {
+                Debug.Log("object is not attached");
+            }
+        }
+
+
         if (Input.GetKeyDown(KeyCode.K) && Time.time > nextPush)
         {
             nextPush = Time.time + pusherCooldown;
 
             Instantiate(pusher, transform.position, transform.rotation, this.gameObject.transform);
-
-
         }
-
 
         if (currentAmount <= 100)
         {
@@ -69,22 +133,17 @@ public class MyCharacterController : MonoBehaviour
             speedcooldown = 0;
         }
 
-
 		if (speed != 10)
 		{
 			speedtimer -= Time.deltaTime;
 
 			if (speedtimer < 0)
 			{
-
 				speed = 10.0f;
-
 				speedtimer = 5.0f;
 			}
-
-
 		}
-	}
+    }
 
     void dashingfunc()
     {
@@ -142,6 +201,17 @@ public class MyCharacterController : MonoBehaviour
         {
             dashrecover = false;
         }
+    }
 
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ball")
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                press = true;
+            }
+        }
     }
 }

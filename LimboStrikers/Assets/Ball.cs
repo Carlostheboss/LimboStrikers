@@ -13,31 +13,47 @@ public class Ball : MonoBehaviour
     public Vector3 PrevLoc;
     public Vector3 DifLoc;
 
-    // Start is called before the first frame update
+    public float thrust = 10.0f;
+
+    public static Ball instance;
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
+
     void Start()
     {
-        wallCollider = GameObject.FindGameObjectWithTag("wall").GetComponent<Collider2D>();
+        //wallCollider = GameObject.FindGameObjectWithTag("wall").GetComponent<Collider2D>();
         ballCollider = this.gameObject.GetComponent<Collider2D>();
         rb = this.gameObject.GetComponent<Rigidbody2D>();
 
         rb.AddForceAtPosition(this.transform.up * 200, this.transform.position);
-
-
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        DifLoc = transform.position - PrevLoc;
-        PrevLoc = transform.position;
+        //DifLoc = transform.position - PrevLoc;
+        //PrevLoc = transform.position;
     }
+
 
     private void FixedUpdate()
     {
-
-        transform.RotateAround(player.position, zAxis, 2);
+        //transform.RotateAround(player.position, zAxis, 2);
     }
 
+
+    public void PuckMovement(Vector2 cross)
+    {
+        rb.velocity = cross * thrust;
+    }
 }
 
 
