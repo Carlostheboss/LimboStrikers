@@ -20,7 +20,7 @@ public class MyCharacterController : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
-    public float speedtimer = 5.0f;
+    public float speedtimer = 3.0f;
     public int changeballdirPU = 0;
     public GameObject ChangeBall;
 
@@ -62,8 +62,8 @@ public class MyCharacterController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
 
-        Puck = Ball.instance;
-        cc2d = GetComponent<CircleCollider2D>();
+        Puck = puckmovement.instance;
+        
 
     }
 

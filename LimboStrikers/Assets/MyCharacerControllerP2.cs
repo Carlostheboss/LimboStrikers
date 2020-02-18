@@ -20,7 +20,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
-    public float speedtimer = 5.0f;
+    public float speedtimer = 3.0f;
     public int changeballdirPU = 0;
     public GameObject ChangeBall;
 
@@ -31,7 +31,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
 
 
 
-    public Ball Puck;
+    public puckmovement Puck;
     public bool press = false;
     private Vector3 zAxis = new Vector3(0, 0, 1);
     public static MyCharacerControllerP2 instance;
@@ -55,8 +55,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
 
-        Puck = Ball.instance;
-        cc2d = GetComponent<CircleCollider2D>();
+        Puck = puckmovement.instance;
     }
 
 
@@ -78,7 +77,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
             transform.RotateAround(this.transform.position, zAxis, 2);
             Puck.thrust = 0.0f;
             Puck.transform.parent = this.transform;
-            Puck.rb.simulated = false;
+            Puck.rb2D.simulated = false;
 
             heading = Puck.transform.position - transform.position;
             Debug.Log("heading" + heading);
@@ -109,7 +108,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
 
             Puck.thrust = 2.0f;
             Puck.transform.parent = null;
-            Puck.rb.simulated = true;
+            Puck.rb2D.simulated = true;
 
             if (Puck.transform.parent != this.transform)
             {

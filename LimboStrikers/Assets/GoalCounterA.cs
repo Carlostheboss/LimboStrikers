@@ -37,8 +37,8 @@ public class GoalCounterA : MonoBehaviour
             }
                 collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 collision.gameObject.transform.position = BallRespawn.transform.position;
-                GameObject.Find("PlayerA").transform.position = new Vector3(transform.position.x, transform.position.y - 1);
-                GameObject.Find("PlayerD").transform.position = new Vector3(PlayerDRespawn.transform.position.x, PlayerDRespawn.transform.position.y - 1);
+                GameObject.Find("PlayerA").transform.position = new Vector3(transform.position.x, transform.position.y - 1, 10);
+                GameObject.Find("PlayerD").transform.position = new Vector3(PlayerDRespawn.transform.position.x, PlayerDRespawn.transform.position.y - 1, 10);
             
            }
     }
