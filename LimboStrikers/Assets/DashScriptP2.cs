@@ -17,7 +17,7 @@ public class DashScriptP2 : MonoBehaviour
 
         transform.position = Player.transform.position;
         transform.localScale = Player.transform.localScale;
-        sprite.sprite = Player.GetComponent<MyCharacterController>().playerSprite.sprite;
+        sprite.sprite = Player.GetComponent<MyCharacerControllerP2>().playerSprite.sprite;
         sprite.color = new Vector4(50, 50, 50, 0.2f);
 
     }

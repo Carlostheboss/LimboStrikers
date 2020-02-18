@@ -33,7 +33,7 @@ public class Ball : MonoBehaviour
         ballCollider = this.gameObject.GetComponent<Collider2D>();
         rb = this.gameObject.GetComponent<Rigidbody2D>();
 
-        rb.AddForceAtPosition(this.transform.up * 200, this.transform.position);
+      
     }
 
 

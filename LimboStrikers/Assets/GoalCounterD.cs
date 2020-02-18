@@ -9,6 +9,8 @@ public class GoalCounterD : MonoBehaviour
     public Text Player1Score;
     public GameObject Goal;
     public Animator GoalAnim;
+    public GameObject BallRespawn;
+    public GameObject PlayerARespawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,10 @@ public class GoalCounterD : MonoBehaviour
             numberofgoalsplayer1 += 1;
             Goal.SetActive(true);
             GoalAnim.Play(0);
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            collision.gameObject.transform.position = BallRespawn.transform.position;
+            GameObject.Find("PlayerD").transform.position = new Vector3(transform.position.x, transform.position.y - 1);
+            GameObject.Find("PlayerA").transform.position = new Vector3(PlayerARespawn.transform.position.x, PlayerARespawn.transform.position.y - 1);
         }
     }
 }
