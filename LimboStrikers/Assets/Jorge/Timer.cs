@@ -7,11 +7,11 @@ public class Timer : MonoBehaviour
     private float currentTime = 0.0f;
     public float startingTime = 0.5f;
 
-    private charactermove character;
+    private MyCharacterController character;
 
     void Start()
     {
-        character = charactermove.instance;
+        character = MyCharacterController.instance;
         currentTime = startingTime;
     }
 

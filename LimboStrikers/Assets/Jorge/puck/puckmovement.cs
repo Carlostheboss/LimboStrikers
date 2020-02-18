@@ -49,7 +49,7 @@ public class puckmovement : MonoBehaviour
         //rb2D.AddForce(Vector3.forward * thrust);
         //rb2D.AddForce(cross.normalized * thrust);
         //rb2D.AddForce(cross * thrust);
-        rb2D.velocity = cross * 10;
+        rb2D.velocity = cross * 30;
         //rb2D.velocity *= 2;
         //this.GetComponent<ConstantForce2D>().force = character.transform.TransformDirection(Vector3.forward);
     }
