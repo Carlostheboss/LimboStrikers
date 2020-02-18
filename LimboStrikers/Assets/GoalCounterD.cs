@@ -26,13 +26,19 @@ public class GoalCounterD : MonoBehaviour
     {
         if (collision.gameObject.name == "ball")
         {
-            numberofgoalsplayer1 += 1;
-            Goal.SetActive(true);
-            GoalAnim.Play(0);
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            collision.gameObject.transform.position = BallRespawn.transform.position;
-            GameObject.Find("PlayerD").transform.position = new Vector3(transform.position.x, transform.position.y - 1);
-            GameObject.Find("PlayerA").transform.position = new Vector3(PlayerARespawn.transform.position.x, PlayerARespawn.transform.position.y - 1);
+
+                numberofgoalsplayer1 += 1;
+            if (numberofgoalsplayer1 != 5)
+            {
+                Goal.SetActive(true);
+          
+                GoalAnim.Play(0);
+            }
+                collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                collision.gameObject.transform.position = BallRespawn.transform.position;
+                GameObject.Find("PlayerD").transform.position = new Vector3(transform.position.x, transform.position.y - 1);
+                GameObject.Find("PlayerA").transform.position = new Vector3(PlayerARespawn.transform.position.x, PlayerARespawn.transform.position.y - 1);
+         
         }
     }
 }

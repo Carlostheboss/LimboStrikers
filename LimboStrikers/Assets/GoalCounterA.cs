@@ -27,13 +27,19 @@ public class GoalCounterA : MonoBehaviour
     {
         if (collision.gameObject.name == "ball")
         {
-            numberofgoalsplayer2 += 1;
-            Goal.SetActive(true);
-            GoalAnim.Play(0);
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            collision.gameObject.transform.position = BallRespawn.transform.position;
-            GameObject.Find("PlayerA").transform.position = new Vector3(transform.position.x,transform.position.y - 1);
-            GameObject.Find("PlayerD").transform.position = new Vector3(PlayerDRespawn.transform.position.x, PlayerDRespawn.transform.position.y - 1);
-        }
+           
+                numberofgoalsplayer2 += 1;
+            if (numberofgoalsplayer2 != 5)
+            {
+                Goal.SetActive(true);
+          
+                GoalAnim.Play(0);
+            }
+                collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                collision.gameObject.transform.position = BallRespawn.transform.position;
+                GameObject.Find("PlayerA").transform.position = new Vector3(transform.position.x, transform.position.y - 1);
+                GameObject.Find("PlayerD").transform.position = new Vector3(PlayerDRespawn.transform.position.x, PlayerDRespawn.transform.position.y - 1);
+            
+           }
     }
 }
