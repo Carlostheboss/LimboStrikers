@@ -42,11 +42,15 @@ public class MyCharacterController : MonoBehaviour
 
 
 
+
+
+
+
     private void Awake()
     {
         if (instance == null)
         {
-            instance = this;
+            instance = this;          
         }
     }
 
@@ -57,6 +61,7 @@ public class MyCharacterController : MonoBehaviour
 
         Puck = Ball.instance;
         cc2d = GetComponent<CircleCollider2D>();
+
     }
 
 
@@ -68,10 +73,12 @@ public class MyCharacterController : MonoBehaviour
         Vector2 movement = new Vector2(move.x, move.y);
         rb.velocity = movement * speed;
         dashingfunc();
+        
     }
 
     private void Update()
     {
+        
         if (press)
         {
             Debug.Log("JumpDown");
@@ -121,7 +128,6 @@ public class MyCharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K) && Time.time > nextPush)
         {
             nextPush = Time.time + pusherCooldown;
-
             Instantiate(pusher, transform.position, transform.rotation, this.gameObject.transform);
         }
 
@@ -156,6 +162,10 @@ public class MyCharacterController : MonoBehaviour
 			}
 		}
     }
+
+   
+
+   
 
     void dashingfunc()
     {
