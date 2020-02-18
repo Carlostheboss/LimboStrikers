@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8550321239942431221}
   - component: {fileID: 8550321239942431227}
   - component: {fileID: 8550321239942431226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pusher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 1, b: 0.96969414, a: 0.6431373}
   m_FlipX: 0

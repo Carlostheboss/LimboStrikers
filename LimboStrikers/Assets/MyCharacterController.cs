@@ -20,7 +20,9 @@ public class MyCharacterController : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
-    float speedtimer = 5.0f;
+    public float speedtimer = 5.0f;
+    public int changeballdirPU = 0;
+    public GameObject ChangeBall;
 
     public float pusherCooldown;
     private float nextPush = 0;
@@ -123,6 +125,16 @@ public class MyCharacterController : MonoBehaviour
             nextPush = Time.time + pusherCooldown;
 
             Instantiate(pusher, transform.position, transform.rotation, this.gameObject.transform);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L) && changeballdirPU > 0)
+        {
+
+            GameObject PUChangeBall = Instantiate(ChangeBall, transform.position, Quaternion.identity);
+            ChangeBallDir ChangeBallScript = PUChangeBall.GetComponent<ChangeBallDir>();
+            ChangeBallScript.placed = true;
+
+            changeballdirPU -= 1;
         }
 
         if (currentAmount <= 100)

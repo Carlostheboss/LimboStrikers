@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - wall
-  - pusher
+  - Puck
   - ball
   - Player2
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - Ball
-  - Divider
+  - Divisor
   - Player
   - 
   - 
