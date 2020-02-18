@@ -31,14 +31,17 @@ public class MyCharacterController : MonoBehaviour
 
 
 
-    public Ball Puck;
+    public puckmovement Puck;
     public bool press = false;
     private Vector3 zAxis = new Vector3(0, 0, 1);
     public static MyCharacterController instance;
-    private CircleCollider2D cc2d;
     private Vector3 heading;
     public bool timer = false;
     Vector2 perpendicular;
+    public Vector3 currentEulerAngles;
+    public Quaternion currentRotation;
+
+
 
 
 
@@ -82,10 +85,10 @@ public class MyCharacterController : MonoBehaviour
         if (press)
         {
             Debug.Log("JumpDown");
-            transform.RotateAround(this.transform.position, zAxis, 2);
+            transform.RotateAround(this.transform.position, zAxis, 10);
             Puck.thrust = 0.0f;
             Puck.transform.parent = this.transform;
-            Puck.rb.simulated = false;
+            Puck.rb2D.simulated = false;
 
             heading = Puck.transform.position - transform.position;
             Debug.Log("heading" + heading);
@@ -116,7 +119,7 @@ public class MyCharacterController : MonoBehaviour
 
             Puck.thrust = 2.0f;
             Puck.transform.parent = null;
-            Puck.rb.simulated = true;
+            Puck.rb2D.simulated = true;
 
             if (Puck.transform.parent != this.transform)
             {
@@ -226,14 +229,14 @@ public class MyCharacterController : MonoBehaviour
     }
 
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "ball")
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                press = true;
-            }
-        }
-    }
+    //void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "ball")
+    //    {
+    //        if (Input.GetButtonDown("Jump"))
+    //        {
+    //            press = true;
+    //        }
+    //    }
+    //}
 }
