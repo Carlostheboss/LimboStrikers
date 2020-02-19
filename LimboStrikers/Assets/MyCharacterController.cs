@@ -108,6 +108,7 @@ public class MyCharacterController : MonoBehaviour
             }
             if (Input.GetButtonUp("Jump"))
             {
+                ThrowingSound.pitch =  1.49f;
                 ThrowingSound.PlayOneShot(ThrowingSound.clip, ThrowingSound.volume);
                 press = false;
                 timer = true;

@@ -11,7 +11,10 @@ public class agarrar2 : MonoBehaviour
         character = MyCharacerControllerP2.instance;
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+   
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("trigger 1");
