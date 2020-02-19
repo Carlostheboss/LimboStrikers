@@ -84,17 +84,17 @@ public class MyCharacterController : MonoBehaviour
         
         if (press)
         {
-            Debug.Log("JumpDown");
+            //Debug.Log("JumpDown");
             transform.RotateAround(this.transform.position, zAxis, 10);
             Puck.thrust = 0.0f;
             Puck.transform.parent = this.transform;
             Puck.rb2D.simulated = false;
 
             heading = Puck.transform.position - transform.position;
-            Debug.Log("heading" + heading);
+            //Debug.Log("heading" + heading);
             heading.Normalize();
             perpendicular = Vector2.Perpendicular(heading);
-            Debug.Log("perpendicular" + perpendicular);
+            //Debug.Log("perpendicular" + perpendicular);
 
             Puck.PuckMovement(perpendicular);
 
@@ -114,7 +114,7 @@ public class MyCharacterController : MonoBehaviour
         }
         if (!press)
         {
-            Debug.Log("JumpUp");
+            //Debug.Log("JumpUp");
             transform.RotateAround(this.transform.position, zAxis, 0);
 
             Puck.thrust = 2.0f;
@@ -227,16 +227,4 @@ public class MyCharacterController : MonoBehaviour
             dashrecover = false;
         }
     }
-
-
-    //void OnCollisionStay2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "ball")
-    //    {
-    //        if (Input.GetButtonDown("Jump"))
-    //        {
-    //            press = true;
-    //        }
-    //    }
-    //}
 }

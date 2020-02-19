@@ -35,10 +35,11 @@ public class MyCharacerControllerP2 : MonoBehaviour
     public bool press = false;
     private Vector3 zAxis = new Vector3(0, 0, 1);
     public static MyCharacerControllerP2 instance;
-    private CircleCollider2D cc2d;
     private Vector3 heading;
     public bool timer = false;
     Vector2 perpendicular;
+    public Vector3 currentEulerAngles;
+    public Quaternion currentRotation;
 
 
 
@@ -73,17 +74,17 @@ public class MyCharacerControllerP2 : MonoBehaviour
     {
         if (press)
         {
-            Debug.Log("JumpDown");
-            transform.RotateAround(this.transform.position, zAxis, 2);
+            //Debug.Log("JumpDown");
+            transform.RotateAround(this.transform.position, zAxis, 10);
             Puck.thrust = 0.0f;
             Puck.transform.parent = this.transform;
             Puck.rb2D.simulated = false;
 
             heading = Puck.transform.position - transform.position;
-            Debug.Log("heading" + heading);
+            //Debug.Log("heading" + heading);
             heading.Normalize();
             perpendicular = Vector2.Perpendicular(heading);
-            Debug.Log("perpendicular" + perpendicular);
+            //Debug.Log("perpendicular" + perpendicular);
 
             Puck.PuckMovement(perpendicular);
 
@@ -95,7 +96,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
                 Debug.Log("object is attached");
             }
         }
-        if (Input.GetButtonUp("Jump"))
+        if (Input.GetKeyUp(KeyCode.KeypadPlus))
         {
             press = false;
             timer = true;
@@ -103,7 +104,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
         }
         if (!press)
         {
-            Debug.Log("JumpUp");
+            //Debug.Log("JumpUp");
             transform.RotateAround(this.transform.position, zAxis, 0);
 
             Puck.thrust = 2.0f;
@@ -211,18 +212,6 @@ public class MyCharacerControllerP2 : MonoBehaviour
         if (!dashready)
         {
             dashrecover = false;
-        }
-    }
-
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "ball")
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                press = true;
-            }
         }
     }
 }

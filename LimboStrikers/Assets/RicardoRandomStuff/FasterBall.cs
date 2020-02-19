@@ -30,10 +30,9 @@ public class FasterBall : MonoBehaviour
         if (other.gameObject.tag == "ball")
         {
             Rigidbody2D rb2d = other.GetComponent<Rigidbody2D>();
-            Ball ballscript = other.gameObject.GetComponent<Ball>();
+            puckmovement ballscript = other.gameObject.GetComponent<puckmovement>();
 
             rb2d.AddForce(  ballscript.DifLoc * 100.0f, ForceMode2D.Impulse);
-
 
             Destroy(gameObject);
         }

@@ -30,8 +30,6 @@ public class BolaSuprema : MonoBehaviour
         currentEulerAngles = new Vector3(0f, 0f, 0f);
         currentRotation.eulerAngles = currentEulerAngles;
         transform.rotation = currentRotation;
-
-        //rb2D.AddForceAtPosition(this.transform.up * 200, this.transform.position);
     }
 
 

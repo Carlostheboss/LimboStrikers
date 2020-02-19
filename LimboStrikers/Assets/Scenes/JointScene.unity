@@ -557,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 2714596507890977656, guid: 8546dc699fdc96545abb610ff9e484a7,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2714596507890977656, guid: 8546dc699fdc96545abb610ff9e484a7,
         type: 3}
@@ -941,6 +941,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5870434785853881214, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: Puck
+      value: 
+      objectReference: {fileID: 367340716}
     - target: {fileID: 5088857307931517260, guid: 9df56758507f61a4f882aee01b9fc937,
         type: 3}
       propertyPath: m_Name
@@ -1021,6 +1026,16 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517266, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088857307931517266, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5088857307931517265, guid: 9df56758507f61a4f882aee01b9fc937,
         type: 3}
       propertyPath: playerghost
@@ -1074,35 +1089,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0c491c58f63bae74bb269c670ddb2d18,
         type: 3}
-    - target: {fileID: 156133619612620532, guid: 9df56758507f61a4f882aee01b9fc937,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: speed
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 156133619612620532, guid: 9df56758507f61a4f882aee01b9fc937,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: startcooldwondashTimer
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 156133619612620532, guid: 9df56758507f61a4f882aee01b9fc937,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: pusherCooldown
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 156133619612620532, guid: 9df56758507f61a4f882aee01b9fc937,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: playerghost
       value: 
       objectReference: {fileID: 6935553210630016786, guid: 39639582e3910f94eab78c1cb49eea97,
         type: 3}
-    - target: {fileID: 156133619612620532, guid: 9df56758507f61a4f882aee01b9fc937,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: pusher
       value: 
       objectReference: {fileID: 8550321239942431223, guid: e5ecd2465418be04990270c2b5a6e4de,
         type: 3}
-    m_RemovedComponents:
-    - {fileID: 156133619612620532, guid: 9df56758507f61a4f882aee01b9fc937, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df56758507f61a4f882aee01b9fc937, type: 3}
 --- !u!1 &561849689
 GameObject:

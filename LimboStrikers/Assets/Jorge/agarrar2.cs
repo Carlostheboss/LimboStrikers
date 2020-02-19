@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class agarrar : MonoBehaviour
+public class agarrar2 : MonoBehaviour
 {
-    private MyCharacterController character;
+    private MyCharacerControllerP2 character;
 
     private void Start()
     {
-        character = MyCharacterController.instance;
+        character = MyCharacerControllerP2.instance;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("cheguei caralho 1");
+        Debug.Log("trigger 1");
         if (collision.gameObject.tag == "ball")
         {
-            Debug.Log("cheguei caralho 2");
+            Debug.Log("trigger 2");
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown(KeyCode.KeypadPlus))
             {
-                Debug.Log("cheguei caralho 3");
+                Debug.Log("trigger 3");
 
                 character.press = true;
 
