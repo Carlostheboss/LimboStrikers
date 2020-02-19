@@ -100,7 +100,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
                 Debug.Log("object is attached");
             }
         }
-        if (Input.GetKeyUp(KeyCode.KeypadPlus))
+        if (Input.GetKeyUp(KeyCode.Keypad0))
         {
             press = false;
             timer = true;

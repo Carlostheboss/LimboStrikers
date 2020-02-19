@@ -18,7 +18,7 @@ public class agarrar2 : MonoBehaviour
         {
             Debug.Log("trigger 2");
 
-            if (Input.GetKeyDown(KeyCode.KeypadPlus))
+            if (Input.GetKeyDown(KeyCode.Keypad0))
             {
                 Debug.Log("trigger 3");
 
