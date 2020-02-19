@@ -20,11 +20,26 @@ public class GameManager : MonoBehaviour
     public Image Set1P2;
     public Image Set2P2;
     public GameObject BallSpawner;
+    public GameObject BallSpawner2;
+    public GameObject BallSpawner3;
+    public Animator BallSpawnerAnim;
+    public Animator BallSpawner2Anim;
+    public Animator BallSpawner3Anim;
+    public GameObject StartText;
+    public Animator StarttextAnim;
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        BallSpawner.SetActive(true);
+        BallSpawnerAnim.Play(0);
+        BallSpawner2.SetActive(true);
+        BallSpawner2Anim.Play(0);
+        BallSpawner3.SetActive(true);
+        BallSpawner3Anim.Play(0);
+
+        StartText.SetActive(true);
+        StarttextAnim.Play(0);
     }
 
     // Update is called once per frame
@@ -54,13 +69,7 @@ public class GameManager : MonoBehaviour
         {
             P2Win.SetActive(true);
             WinAnimP2.Play(0);
-       
-          
-        
            Set1P2.color = new Vector4(Set1P2.color.r, Set1P2.color.b, Set1P2.color.g, 1);
-       
-
-
         }
         if (setsP1 == 2)
         {
@@ -69,22 +78,13 @@ public class GameManager : MonoBehaviour
             WinAnimP2.Play(0);
             PlayerOne.SetActive(false);
             PlayerTwo.SetActive(false);
-     
             Set2P2.color = new Vector4(Set2P2.color.r, Set2P2.color.b, Set2P2.color.g, 1);
-
         }
         if (setsP2 == 1)
         {
             P1Win.SetActive(true);
-            WinAnimP1.Play(0);
-        
-
-         
-                Set1P1.color = new Vector4(Set1P1.color.r, Set1P1.color.b, Set1P1.color.g, 1);
-         
-
-
-
+            WinAnimP1.Play(0);       
+            Set1P1.color = new Vector4(Set1P1.color.r, Set1P1.color.b, Set1P1.color.g, 1);
         }
         if(setsP2 == 2)
         {
@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
             WinAnimP1.Play(0);
             PlayerOne.SetActive(false);
             PlayerTwo.SetActive(false);
-
             Set2P1.color = new Vector4(Set2P1.color.r, Set2P1.color.b, Set2P1.color.g, 1);
 
         }

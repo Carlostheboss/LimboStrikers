@@ -10,6 +10,12 @@ public class GoalCounterD : MonoBehaviour
     public GameObject Goal;
     public Animator GoalAnim;
     public GameObject BallRespawn;
+    public GameObject BallSpawner;
+    public GameObject BallSpawner2;
+    public GameObject BallSpawner3;
+    public Animator BallSpawnerAnim;
+    public Animator BallSpawner2Anim;
+    public Animator BallSpawner3Anim;
     public GameObject PlayerARespawn;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +40,14 @@ public class GoalCounterD : MonoBehaviour
           
                 GoalAnim.Play(0);
             }
-                collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+            BallSpawner.SetActive(true);
+            BallSpawnerAnim.Play(0);
+            BallSpawner2.SetActive(true);
+            BallSpawner2Anim.Play(0);
+            BallSpawner3.SetActive(true);
+            BallSpawner3Anim.Play(0);
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 collision.gameObject.transform.position = BallRespawn.transform.position;
                 GameObject.Find("PlayerD").transform.position = new Vector3(transform.position.x - 5, transform.position.y - 1,10);
                 GameObject.Find("PlayerA").transform.position = new Vector3(PlayerARespawn.transform.position.x , PlayerARespawn.transform.position.y - 1,10);
