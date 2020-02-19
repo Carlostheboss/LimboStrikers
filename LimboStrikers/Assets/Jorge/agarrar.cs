@@ -11,11 +11,16 @@ public class agarrar : MonoBehaviour
         character = MyCharacterController.instance;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("trigger 1");
         if (collision.gameObject.tag == "ball")
         {
+
             //Debug.Log("trigger 2");
 
             if (Input.GetButtonDown("Jump"))

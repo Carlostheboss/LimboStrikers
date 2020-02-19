@@ -44,6 +44,7 @@ public class MyCharacterController : MonoBehaviour
     private MyCharacerControllerP2 myCharacterController2;
 
     public bool touch = false;
+    public AudioSource ThrowingSound;
 
 
     private void Awake()
@@ -107,6 +108,8 @@ public class MyCharacterController : MonoBehaviour
             }
             if (Input.GetButtonUp("Jump"))
             {
+                ThrowingSound.pitch =  1.49f;
+                ThrowingSound.PlayOneShot(ThrowingSound.clip, ThrowingSound.volume);
                 press = false;
                 timer = true;
                 touch = false;

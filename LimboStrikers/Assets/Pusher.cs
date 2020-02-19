@@ -16,6 +16,8 @@ public class Pusher : MonoBehaviour
 
     private float nextPush;
 
+    public AudioSource HittingPlayerSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,7 @@ public class Pusher : MonoBehaviour
         if (collision.gameObject.tag == "ball")
         {
 
+            HittingPlayerSound.PlayOneShot(HittingPlayerSound.clip, HittingPlayerSound.volume);
             Debug.Log("touch ball");
 
             var dir = transform.position - collision.transform.position;

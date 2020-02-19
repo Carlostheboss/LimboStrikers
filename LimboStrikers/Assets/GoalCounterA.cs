@@ -17,6 +17,7 @@ public class GoalCounterA : MonoBehaviour
     public Animator BallSpawner2Anim;
     public Animator BallSpawner3Anim;
     public GameObject PlayerDRespawn;
+    public AudioSource GoalAudio;
     // Start is called before the first frame update
     void Start()
     {     
@@ -33,8 +34,8 @@ public class GoalCounterA : MonoBehaviour
     {
         if (collision.gameObject.name == "ball")
         {
-           
-                numberofgoalsplayer2 += 1;
+            GoalAudio.PlayOneShot(GoalAudio.clip, GoalAudio.volume);
+            numberofgoalsplayer2 += 1;
             if (numberofgoalsplayer2 != 5)
             {
                 Goal.SetActive(true);
@@ -49,8 +50,8 @@ public class GoalCounterA : MonoBehaviour
             BallSpawner3Anim.Play(0);
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 collision.gameObject.transform.position = BallRespawn.transform.position;
-                GameObject.Find("PlayerA").transform.position = new Vector3(transform.position.x + 4, transform.position.y, 8);
-                GameObject.Find("PlayerD").transform.position = new Vector3(PlayerDRespawn.transform.position.x, PlayerDRespawn.transform.position.y, 10);
+                GameObject.Find("PlayerA").transform.position = new Vector3(transform.position.x + 10, transform.position.y, 6);
+                GameObject.Find("PlayerD").transform.position = new Vector3(PlayerDRespawn.transform.position.x, PlayerDRespawn.transform.position.y, 6);
             
            }
     }
