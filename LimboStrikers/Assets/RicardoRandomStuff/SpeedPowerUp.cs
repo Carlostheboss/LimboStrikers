@@ -20,12 +20,10 @@ public class SpeedPowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {		
-
 		if (TimeToDestroy < Time.time)
 		{
 			Destroy(gameObject);
 		}
-
 	}
 
 

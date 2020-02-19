@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5088857307931517267}
   - component: {fileID: 5088857307931517266}
   - component: {fileID: 5820892148241305369}
-  - component: {fileID: 156133619612620532}
+  - component: {fileID: 5870434785853881214}
   m_Layer: 0
   m_Name: PlayerD
   m_TagString: Player
@@ -120,7 +120,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
---- !u!114 &156133619612620532
+--- !u!114 &5870434785853881214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,22 +129,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 5088857307931517260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c7e4e6cf565434381071559499db68, type: 3}
+  m_Script: {fileID: 11500000, guid: 07c102a377e711749b946361e3cff404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerghost: {fileID: 0}
-  speed: 0
+  playerghost: {fileID: 6935553210630016786, guid: 39639582e3910f94eab78c1cb49eea97,
+    type: 3}
+  speed: 15
   dash: 0
   dashready: 0
   dashTimer: 0.25
   startdashTimer: 0.25
   dashcooldownTimer: 0.2
-  startcooldwondashTimer: 0
+  startcooldwondashTimer: 0.2
   playerSprite: {fileID: 0}
   currentAmount: 100
   speedcooldown: -200
-  pusherCooldown: 0.2
-  pusher: {fileID: 0}
+  speedtimer: 5
+  changeballdirPU: 0
+  ChangeBall: {fileID: 1162474953706215240, guid: d4ddcd74ebf1369488e1f8b7cb8499a0,
+    type: 3}
+  pusherCooldown: 1
+  pusher: {fileID: 8550321239942431223, guid: e5ecd2465418be04990270c2b5a6e4de, type: 3}
   Puck: {fileID: 0}
   press: 0
   timer: 0

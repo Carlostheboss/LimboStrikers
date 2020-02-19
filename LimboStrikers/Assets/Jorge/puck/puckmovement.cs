@@ -8,13 +8,14 @@ public class puckmovement : MonoBehaviour
     public Rigidbody2D rb2D;
     public float thrust = 1.0f;
     public static puckmovement instance;
-    private charactermove character;
 
 
     Vector3 currentEulerAngles;
     public Quaternion currentRotation;
 
-    Vector3 forward;
+
+    public Vector3 PrevLoc;
+    public Vector3 DifLoc;
 
 
     private void Awake()
@@ -38,19 +39,12 @@ public class puckmovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //PuckMovement(character.cross);
-        forward = transform.TransformDirection(-Vector3.up) * 10;
-        Debug.DrawRay(transform.position, forward, Color.white);
+        DifLoc = transform.position - PrevLoc;
+        PrevLoc = transform.position;
     }
 
     public void PuckMovement(Vector2 cross)
     {
-        //rb2D.AddForce(transform.right * thrust);
-        //rb2D.AddForce(Vector3.forward * thrust);
-        //rb2D.AddForce(cross.normalized * thrust);
-        //rb2D.AddForce(cross * thrust);
         rb2D.velocity = cross * 30;
-        //rb2D.velocity *= 2;
-        //this.GetComponent<ConstantForce2D>().force = character.transform.TransformDirection(Vector3.forward);
     }
 }

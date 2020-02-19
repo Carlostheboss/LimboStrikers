@@ -39,8 +39,8 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        //DifLoc = transform.position - PrevLoc;
-        //PrevLoc = transform.position;
+        DifLoc = transform.position - PrevLoc;
+        PrevLoc = transform.position;
     }
 
 
