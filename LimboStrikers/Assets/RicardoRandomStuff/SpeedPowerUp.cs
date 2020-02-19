@@ -9,9 +9,11 @@ public class SpeedPowerUp : MonoBehaviour
 {
 	float DestroyTimer;
 	float TimeToDestroy;
+    public GameObject VFXSpeedPU;
 
-	// Start is called before the first frame update
-	void Start()
+
+    // Start is called before the first frame update
+    void Start()
     {
 		DestroyTimer = Time.time;
 		TimeToDestroy = DestroyTimer + 5.0f;
@@ -33,6 +35,8 @@ public class SpeedPowerUp : MonoBehaviour
 
         if (other.gameObject.layer == 10)
         {
+            Instantiate(VFXSpeedPU, transform.position, Quaternion.identity);
+
             GameObject player = other.gameObject;
             if (player.name == "PlayerA")
             {

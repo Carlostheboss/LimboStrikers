@@ -8,6 +8,11 @@ public class ChangeBallDir : MonoBehaviour
     float DestroyTimer;
     float TimeToDestroy;
 
+    public GameObject VFXPlacedCBDPU;
+    public GameObject VFXBallPassedCBDPU;
+    public GameObject VFXPlayerPickedCBDPU;
+    public GameObject VFXIdle;
+
     MyCharacerControllerP2 playerScript2;
     MyCharacterController playerScript;
 
@@ -17,7 +22,11 @@ public class ChangeBallDir : MonoBehaviour
         DestroyTimer = Time.time;
         TimeToDestroy = DestroyTimer + 15.0f;
 
-
+        if (placed)
+        {
+            Destroy(VFXIdle);
+            Instantiate(VFXPlacedCBDPU, transform.position, Quaternion.identity, transform);
+        }
 
     }
 
@@ -35,6 +44,9 @@ public class ChangeBallDir : MonoBehaviour
 
         if (other.gameObject.tag == "ball" && placed == true)
         {
+
+            Instantiate(VFXBallPassedCBDPU, transform.position, Quaternion.identity);
+
             Rigidbody2D rb2d = other.GetComponent<Rigidbody2D>();
             float randVal = Random.Range(-1f, 1.1f);
 
@@ -49,6 +61,9 @@ public class ChangeBallDir : MonoBehaviour
         }
         else if (other.gameObject.layer == 10 && placed == false)
         {
+
+            Instantiate(VFXPlayerPickedCBDPU, transform.position, Quaternion.identity);
+
             if (other.gameObject.tag == "Player")
             {
                  playerScript = other.GetComponent<MyCharacterController>();

@@ -8,6 +8,8 @@ public class SlowPowerUp : MonoBehaviour
 	float DestroyTimer;
 	float TimeToDestroy;
 
+	public GameObject VFXSlow;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -29,6 +31,9 @@ public class SlowPowerUp : MonoBehaviour
 
 		if (other.gameObject.layer == 10)
 		{
+
+			Instantiate(VFXSlow, transform.position, Quaternion.identity);
+
 			GameObject player = other.gameObject;
 			if( player.name == "PlayerD") 
 			{

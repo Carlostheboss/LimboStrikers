@@ -8,6 +8,10 @@ public class FasterBall : MonoBehaviour
     float DestroyTimer;
     float TimeToDestroy;
 
+    public GameObject VFXFastBall;
+
+    public Rigidbody2D rb2d;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +33,12 @@ public class FasterBall : MonoBehaviour
         Debug.Log("Colliding");
         if (other.gameObject.tag == "ball")
         {
-            Rigidbody2D rb2d = other.GetComponent<Rigidbody2D>();
-            puckmovement ballscript = other.gameObject.GetComponent<puckmovement>();
+            Instantiate(VFXFastBall, transform.position, Quaternion.identity);
 
-            rb2d.AddForce(  ballscript.DifLoc * 100.0f, ForceMode2D.Impulse);
+            rb2d = other.GetComponent<Rigidbody2D>();
+
+
+            rb2d.velocity = rb2d.velocity * 4;
 
             Destroy(gameObject);
         }
