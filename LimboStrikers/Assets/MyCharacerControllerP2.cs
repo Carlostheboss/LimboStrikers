@@ -20,7 +20,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
-    public float speedtimer = 5.0f;
+    public float speedtimer = 3.0f;
     public int changeballdirPU = 0;
     public GameObject ChangeBall;
 

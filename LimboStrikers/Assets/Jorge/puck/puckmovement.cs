@@ -29,7 +29,7 @@ public class puckmovement : MonoBehaviour
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-        transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        transform.position = new Vector3(0.0f, 0.0f, 10.0f);
 
         currentEulerAngles = new Vector3(0f, 0f, 0f);
         currentRotation.eulerAngles = currentEulerAngles;

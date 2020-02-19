@@ -33,7 +33,7 @@ public class RandomStuff : MonoBehaviour
 
 			int PUR = Random.Range(0, PowerUp.Length);
 
-			Vector3 pos = new Vector3(x, y, -1f);
+			Vector3 pos = new Vector3(x, y, 10f);
 
 			Instantiate(PowerUp[PUR], pos, Quaternion.identity, transform);
 

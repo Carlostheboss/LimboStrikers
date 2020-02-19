@@ -20,7 +20,7 @@ public class MyCharacterController : MonoBehaviour
     public float currentAmount;
     public float speedcooldown;
 
-    public float speedtimer = 5.0f;
+    public float speedtimer = 3.0f;
     public int changeballdirPU = 0;
     public GameObject ChangeBall;
 
@@ -45,11 +45,15 @@ public class MyCharacterController : MonoBehaviour
 
 
 
+
+
+
+
     private void Awake()
     {
         if (instance == null)
         {
-            instance = this;
+            instance = this;          
         }
     }
 
@@ -59,6 +63,8 @@ public class MyCharacterController : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
 
         Puck = puckmovement.instance;
+        
+
     }
 
 
@@ -70,10 +76,12 @@ public class MyCharacterController : MonoBehaviour
         Vector2 movement = new Vector2(move.x, move.y);
         rb.velocity = movement * speed;
         dashingfunc();
+        
     }
 
     private void Update()
     {
+        
         if (press)
         {
             //Debug.Log("JumpDown");
@@ -123,7 +131,6 @@ public class MyCharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K) && Time.time > nextPush)
         {
             nextPush = Time.time + pusherCooldown;
-
             Instantiate(pusher, transform.position, transform.rotation, this.gameObject.transform);
         }
 
@@ -158,6 +165,10 @@ public class MyCharacterController : MonoBehaviour
 			}
 		}
     }
+
+   
+
+   
 
     void dashingfunc()
     {

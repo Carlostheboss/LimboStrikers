@@ -10,6 +10,7 @@ public class Pusher : MonoBehaviour
     private IEnumerator coolDownCourotine;
     private bool pusherActive;
     private bool canPush;
+    private CameraShake shake;
 
     public float pusherTimer;
 
@@ -18,6 +19,7 @@ public class Pusher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shake = CameraShake.instance;
         pusherActive = false;
         canPush = true;
     }
@@ -43,6 +45,8 @@ public class Pusher : MonoBehaviour
             dir = -dir.normalized;
 
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(dir * pushPower);
+
+            shake.TriggerShake(.3f, .2f);
         }
 
     }
