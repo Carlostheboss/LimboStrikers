@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public GameObject StartText;
     public Animator StarttextAnim;
     public GameObject restart;
+    public AudioSource HeavenWinsAudio;
+    public AudioSource HellWinsAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -105,12 +107,16 @@ public class GameManager : MonoBehaviour
         }
         if (setsP1 == 2)
         {
+            PlayerOne.SetActive(false);
+            PlayerTwo.SetActive(false);
+            HeavenWinsAudio.PlayOneShot(HeavenWinsAudio.clip, HeavenWinsAudio.volume);
             P2Win.SetActive(false);
             P2Win.SetActive(true);
             WinAnimP2.Play(0);
             PlayerOne.SetActive(false);
             PlayerTwo.SetActive(false);
             Set2P2.color = new Vector4(Set2P2.color.r, Set2P2.color.b, Set2P2.color.g, 1);
+            restart.SetActive(true);
         }
         if (setsP2 == 1)
         {
@@ -120,13 +126,16 @@ public class GameManager : MonoBehaviour
         }
         if(setsP2 == 2)
         {
+            PlayerOne.SetActive(false);
+            PlayerTwo.SetActive(false);
+            HellWinsAudio.PlayOneShot(HellWinsAudio.clip, HellWinsAudio.volume);
             P1Win.SetActive(false);
             P1Win.SetActive(true);
             WinAnimP1.Play(0);
             PlayerOne.SetActive(false);
             PlayerTwo.SetActive(false);
             Set2P1.color = new Vector4(Set2P1.color.r, Set2P1.color.b, Set2P1.color.g, 1);
-
+            restart.SetActive(true);
         }
     }
 }
