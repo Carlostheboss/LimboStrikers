@@ -43,6 +43,7 @@ public class MyCharacterController : MonoBehaviour
 
     private MyCharacerControllerP2 myCharacterController2;
 
+    public bool touch = false;
 
 
     private void Awake()
@@ -77,64 +78,70 @@ public class MyCharacterController : MonoBehaviour
 
     private void Update()
     {
-        
-        if (press)
+        if (touch == true)
         {
-            //Debug.Log("JumpDown");
-            transform.RotateAround(this.transform.position, zAxis, 10);
-            Puck.thrust = 0.0f;
-            Puck.transform.parent = this.transform;
-            Puck.rb2D.simulated = false;
-
-            heading = Puck.transform.position - transform.position;
-            //Debug.Log("heading" + heading);
-            heading.Normalize();
-            perpendicular = Vector2.Perpendicular(heading);
-            //Debug.Log("perpendicular" + perpendicular);
-
-            Puck.PuckMovement(perpendicular);
-
-            timer = false;
-
-
-            if (Puck.transform.parent == this.transform)
+            if (press)
             {
-                Debug.Log("object is attached");
+                myCharacterController2.touch = false;
+                //Debug.Log("JumpDown");
+                transform.RotateAround(this.transform.position, zAxis, 15);
+                Puck.thrust = 0.0f;
+                Puck.transform.parent = this.transform;
+                Puck.rb2D.simulated = false;
+
+                heading = Puck.transform.position - transform.position;
+                //Debug.Log("heading" + heading);
+                heading.Normalize();
+                perpendicular = Vector2.Perpendicular(heading);
+                //Debug.Log("perpendicular" + perpendicular);
+
+                Puck.PuckMovement(perpendicular);
+
+                timer = false;
+
+
+                if (Puck.transform.parent == this.transform)
+                {
+                    Debug.Log("object is attached");
+                }
+            }
+            if (Input.GetButtonUp("Jump"))
+            {
+                press = false;
+                timer = true;
+                touch = false;
+
+            }
+            if (!press && myCharacterController2.press)
+            {
+                //Debug.Log("JumpUp");
+                transform.RotateAround(this.transform.position, zAxis, 0);
+
+                Puck.thrust = 2.0f;
+                Puck.transform.parent = myCharacterController2.transform;
+                Puck.rb2D.simulated = true;
+
+                if (Puck.transform.parent != this.transform)
+                {
+                    Debug.Log("object is not attached");
+                }
+            }
+            else if (!press && !myCharacterController2.press)
+            {
+                //Debug.Log("JumpUp");
+                transform.RotateAround(this.transform.position, zAxis, 0);
+
+                Puck.thrust = 2.0f;
+                Puck.transform.parent = null;
+                Puck.rb2D.simulated = true;
+
+                if (Puck.transform.parent != this.transform)
+                {
+                    Debug.Log("object is not attached");
+                }
             }
         }
-        if (Input.GetButtonUp("Jump"))
-        {
-            press = false;
-            timer = true;
 
-        }
-        if (!press && myCharacterController2.press)
-        {
-            //Debug.Log("JumpUp");
-            transform.RotateAround(this.transform.position, zAxis, 0);
-
-            Puck.thrust = 2.0f;
-            Puck.transform.parent = myCharacterController2.transform;
-            Puck.rb2D.simulated = true;
-
-            if (Puck.transform.parent != this.transform)
-            {
-                Debug.Log("object is not attached");
-            }
-        }else if (!press && !myCharacterController2.press)
-        {
-            //Debug.Log("JumpUp");
-            transform.RotateAround(this.transform.position, zAxis, 0);
-
-            Puck.thrust = 2.0f;
-            Puck.transform.parent = null;
-            Puck.rb2D.simulated = true;
-
-            if (Puck.transform.parent != this.transform)
-            {
-                Debug.Log("object is not attached");
-            }
-        }
 
 
         if (Input.GetKeyDown(KeyCode.K) && Time.time > nextPush)
@@ -176,9 +183,6 @@ public class MyCharacterController : MonoBehaviour
     }
 
    
-
-   
-
     void dashingfunc()
     {
         Vector2 movement2 = new Vector2(move.x, move.y);

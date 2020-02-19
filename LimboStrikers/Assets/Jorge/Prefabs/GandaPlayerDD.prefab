@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5673311552020108493}
   - component: {fileID: 1394486942101328976}
   m_Layer: 10
-  m_Name: GandaPlayerD
+  m_Name: GandaPlayerDD
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   timer: 0
   currentEulerAngles: {x: 0, y: 0, z: 0}
   currentRotation: {x: 0, y: 0, z: 0, w: 0}
+  touch: 0
 --- !u!212 &5673311552020108495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5673311552020108493
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ GameObject:
   - component: {fileID: 5673311552207374379}
   - component: {fileID: 5673311552207374390}
   - component: {fileID: 5673311552207374389}
-  - component: {fileID: 5673311552207374388}
+  - component: {fileID: 8294743772798571854}
   m_Layer: 10
   m_Name: agarra-me
   m_TagString: Untagged
@@ -268,7 +269,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
---- !u!114 &5673311552207374388
+--- !u!114 &8294743772798571854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,6 +278,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5673311552207374378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122afc1105ba54c3b93f82b6a6c7adce, type: 3}
+  m_Script: {fileID: 11500000, guid: d86f5ce1df22e41239be513e78ff354b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

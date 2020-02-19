@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5254817540350401556}
   - component: {fileID: 1516952238978391177}
   m_Layer: 10
-  m_Name: GandaPlayerA
+  m_Name: GandaPlayerAA
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   timer: 0
   currentEulerAngles: {x: 0, y: 0, z: 0}
   currentRotation: {x: 0, y: 0, z: 0, w: 0}
+  touch: 0
 --- !u!212 &5254817540350401558
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -250,7 +251,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5254817540350401556
 CircleCollider2D:
   m_ObjectHideFlags: 0
