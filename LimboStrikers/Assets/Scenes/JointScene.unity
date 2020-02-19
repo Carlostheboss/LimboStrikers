@@ -2342,7 +2342,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f6a70820beb0b9c4896ab15c72a5dd82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfd6f313b89bccd42aa3394dc58e49e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2751,6 +2751,7 @@ MonoBehaviour:
   currentEulerAngles: {x: 0, y: 0, z: 0}
   currentRotation: {x: 0, y: 0, z: 0, w: 0}
   touch: 0
+  ThrowingSound: {fileID: 0}
 --- !u!1 &1256299843
 GameObject:
   m_ObjectHideFlags: 0
