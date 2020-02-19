@@ -53,6 +53,7 @@ public class puckmovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "wall")
         {
+            SoundHittingWall.pitch = Random.Range(0.01f, 1.5f);
             SoundHittingWall.PlayOneShot(SoundHittingWall.clip, SoundHittingWall.volume);
         }
     }

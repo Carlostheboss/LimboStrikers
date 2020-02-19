@@ -44,6 +44,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
     private MyCharacterController myCharacterController;
 
     public bool touch = false;
+    public AudioSource ThrowingSound;
 
 
 
@@ -107,6 +108,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
             }
             if (Input.GetButtonUp("Rotate"))
             {
+                ThrowingSound.PlayOneShot(ThrowingSound.clip, ThrowingSound.volume);
                 press = false;
                 timer = true;
                 touch = false;
