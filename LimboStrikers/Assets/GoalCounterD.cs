@@ -17,6 +17,7 @@ public class GoalCounterD : MonoBehaviour
     public Animator BallSpawner2Anim;
     public Animator BallSpawner3Anim;
     public GameObject PlayerARespawn;
+    public AudioSource GoalAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +33,8 @@ public class GoalCounterD : MonoBehaviour
     {
         if (collision.gameObject.name == "ball")
         {
-
-                numberofgoalsplayer1 += 1;
+            GoalAudio.PlayOneShot(GoalAudio.clip, GoalAudio.volume);
+            numberofgoalsplayer1 += 1;
             if (numberofgoalsplayer1 != 5)
             {
                 Goal.SetActive(true);

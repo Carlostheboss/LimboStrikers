@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Animator BallSpawner3Anim;
     public GameObject StartText;
     public Animator StarttextAnim;
+    public GameObject restart;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,37 @@ public class GameManager : MonoBehaviour
         StartText.SetActive(true);
         StarttextAnim.Play(0);
     }
+
+    public void Restart()
+    {
+        GoalCounterD.numberofgoalsplayer1 = 0;
+        GoalCounterA.numberofgoalsplayer2 = 0;
+        setsP1 = 0;
+        setsP2 = 0;
+        Set1P1.color = new Vector4(Set1P1.color.r, Set1P1.color.b, Set1P1.color.g, 0.3f);
+        Set2P1.color = new Vector4(Set2P1.color.r, Set2P1.color.b, Set2P1.color.g, 0.3f);
+        Set1P2.color = new Vector4(Set1P2.color.r, Set1P2.color.b, Set1P2.color.g, 0.3f);
+        Set2P2.color = new Vector4(Set2P2.color.r, Set2P2.color.b, Set2P2.color.g, 0.3f);
+
+        PlayerOne.transform.position = new Vector3(GoalCounterA.transform.position.x + 4, GoalCounterA.transform.position.y, 8);
+        PlayerTwo.transform.position = new Vector3(GoalCounterD.transform.position.x - 4, GoalCounterD.transform.position.y, 10);
+
+        BallSpawner.SetActive(true);
+        BallSpawnerAnim.Play(0);
+        BallSpawner2.SetActive(true);
+        BallSpawner2Anim.Play(0);
+        BallSpawner3.SetActive(true);
+        BallSpawner3Anim.Play(0);
+
+        StartText.SetActive(true);
+        StarttextAnim.Play(0);
+
+        PlayerOne.SetActive(true);
+        PlayerTwo.SetActive(true);
+
+        restart.SetActive(false);
+    }
+
 
     // Update is called once per frame
     void Update()
