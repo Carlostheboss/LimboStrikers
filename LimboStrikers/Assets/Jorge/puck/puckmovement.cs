@@ -16,6 +16,7 @@ public class puckmovement : MonoBehaviour
 
     public Vector3 PrevLoc;
     public Vector3 DifLoc;
+    public AudioSource SoundHittingWall;
 
 
     private void Awake()
@@ -46,5 +47,13 @@ public class puckmovement : MonoBehaviour
     public void PuckMovement(Vector2 cross)
     {
         rb2D.velocity = cross * 45;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "wall")
+        {
+            SoundHittingWall.PlayOneShot(SoundHittingWall.clip, SoundHittingWall.volume);
+        }
     }
 }
