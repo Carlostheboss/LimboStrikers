@@ -1118,11 +1118,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5870434785853881214, guid: 9df56758507f61a4f882aee01b9fc937,
-        type: 3}
-      propertyPath: Puck
-      value: 
-      objectReference: {fileID: 367340716}
     - target: {fileID: 0}
       propertyPath: speed
       value: 15
@@ -1160,6 +1155,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5870434785853881214, guid: 9df56758507f61a4f882aee01b9fc937,
+        type: 3}
+      propertyPath: Puck
+      value: 
+      objectReference: {fileID: 367340716}
     - target: {fileID: 5088857307931517264, guid: 9df56758507f61a4f882aee01b9fc937,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3169,6 +3169,11 @@ MonoBehaviour:
   PlayerTwo: {fileID: 1243220632}
   WinAnimP1: {fileID: 1856885527}
   WinAnimP2: {fileID: 1258606114}
+  Set1P1: {fileID: 0}
+  Set2P1: {fileID: 0}
+  Set1P2: {fileID: 0}
+  Set2P2: {fileID: 0}
+  BallSpawner: {fileID: 0}
 --- !u!4 &1638299335
 Transform:
   m_ObjectHideFlags: 0

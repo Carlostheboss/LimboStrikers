@@ -41,6 +41,8 @@ public class MyCharacerControllerP2 : MonoBehaviour
     public Vector3 currentEulerAngles;
     public Quaternion currentRotation;
 
+    private MyCharacterController myCharacterController;
+
 
 
     private void Awake()
@@ -57,6 +59,8 @@ public class MyCharacerControllerP2 : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
 
         Puck = puckmovement.instance;
+
+        myCharacterController = MyCharacterController.instance;
     }
 
 
@@ -102,7 +106,20 @@ public class MyCharacerControllerP2 : MonoBehaviour
             timer = true;
 
         }
-        if (!press)
+        if (!press && myCharacterController.press)
+        {
+            //Debug.Log("JumpUp");
+            transform.RotateAround(this.transform.position, zAxis, 0);
+
+            Puck.thrust = 2.0f;
+            Puck.transform.parent = myCharacterController.transform;
+            Puck.rb2D.simulated = true;
+
+            if (Puck.transform.parent != this.transform)
+            {
+                Debug.Log("object is not attached");
+            }
+        }else if (!press && !myCharacterController.press)
         {
             //Debug.Log("JumpUp");
             transform.RotateAround(this.transform.position, zAxis, 0);
@@ -151,7 +168,7 @@ public class MyCharacerControllerP2 : MonoBehaviour
 
             if (speedtimer < 0)
             {
-                speed = 10.0f;
+                speed = 15.0f;
                 speedtimer = 5.0f;
             }
         }
