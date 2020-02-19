@@ -2870,6 +2870,13 @@ MonoBehaviour:
   Set1P2: {fileID: 1286118923}
   Set2P2: {fileID: 357342972}
   BallSpawner: {fileID: 576445477}
+  BallSpawner2: {fileID: 0}
+  BallSpawner3: {fileID: 0}
+  BallSpawnerAnim: {fileID: 0}
+  BallSpawner2Anim: {fileID: 0}
+  BallSpawner3Anim: {fileID: 0}
+  StartText: {fileID: 0}
+  StarttextAnim: {fileID: 0}
 --- !u!4 &1638299335
 Transform:
   m_ObjectHideFlags: 0
@@ -40419,6 +40426,12 @@ MonoBehaviour:
   Goal: {fileID: 206030670}
   GoalAnim: {fileID: 206030674}
   BallRespawn: {fileID: 439291880}
+  BallSpawner: {fileID: 0}
+  BallSpawner2: {fileID: 0}
+  BallSpawner3: {fileID: 0}
+  BallSpawnerAnim: {fileID: 0}
+  BallSpawner2Anim: {fileID: 0}
+  BallSpawner3Anim: {fileID: 0}
   PlayerDRespawn: {fileID: 478642471}
 --- !u!4 &8634800703143502291
 Transform:
@@ -49835,6 +49848,12 @@ MonoBehaviour:
   Goal: {fileID: 206030670}
   GoalAnim: {fileID: 206030674}
   BallRespawn: {fileID: 439291880}
+  BallSpawner: {fileID: 0}
+  BallSpawner2: {fileID: 0}
+  BallSpawner3: {fileID: 0}
+  BallSpawnerAnim: {fileID: 0}
+  BallSpawner2Anim: {fileID: 0}
+  BallSpawner3Anim: {fileID: 0}
   PlayerARespawn: {fileID: 1095585991}
 --- !u!4 &8634800703507491803
 Transform:
