@@ -45,6 +45,6 @@ public class puckmovement : MonoBehaviour
 
     public void PuckMovement(Vector2 cross)
     {
-        rb2D.velocity = cross * 30;
+        rb2D.velocity = cross * 45;
     }
 }
